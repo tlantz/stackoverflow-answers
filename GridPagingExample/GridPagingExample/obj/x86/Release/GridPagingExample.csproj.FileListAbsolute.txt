@@ -1,0 +1,13 @@
+C:\code\stackoverflow-answers\GridPagingExample\GridPagingExample\bin\Release\GridPagingExample.exe
+C:\code\stackoverflow-answers\GridPagingExample\GridPagingExample\bin\Release\GridPagingExample.pdb
+C:\code\stackoverflow-answers\GridPagingExample\GridPagingExample\obj\x86\Release\ResolveAssemblyReference.cache
+C:\code\stackoverflow-answers\GridPagingExample\GridPagingExample\obj\x86\Release\MainWindow.baml
+C:\code\stackoverflow-answers\GridPagingExample\GridPagingExample\obj\x86\Release\MainWindow.g.cs
+C:\code\stackoverflow-answers\GridPagingExample\GridPagingExample\obj\x86\Release\App.g.cs
+C:\code\stackoverflow-answers\GridPagingExample\GridPagingExample\obj\x86\Release\GridPagingExample_MarkupCompile.cache
+C:\code\stackoverflow-answers\GridPagingExample\GridPagingExample\obj\x86\Release\GridPagingExample.g.resources
+C:\code\stackoverflow-answers\GridPagingExample\GridPagingExample\obj\x86\Release\GridPagingExample.Properties.Resources.resources
+C:\code\stackoverflow-answers\GridPagingExample\GridPagingExample\obj\x86\Release\GenerateResource.read.1.tlog
+C:\code\stackoverflow-answers\GridPagingExample\GridPagingExample\obj\x86\Release\GenerateResource.write.1.tlog
+C:\code\stackoverflow-answers\GridPagingExample\GridPagingExample\obj\x86\Release\GridPagingExample.exe
+C:\code\stackoverflow-answers\GridPagingExample\GridPagingExample\obj\x86\Release\GridPagingExample.pdb
