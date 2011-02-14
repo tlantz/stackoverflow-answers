@@ -1,11 +1,3 @@
 ﻿using System.Windows;
 
-namespace GridPagingExample
-{
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
-    public partial class App : Application
-    {
-    }
-}
+namespace GridPagingExample { public partial class App : Application { } }
