@@ -6,7 +6,7 @@ using System.Windows.Data;
 
 namespace GridPagingExample
 {
-    public partial class MainWindow : Window
+    public sealed partial class MainWindow 
     {
         private readonly PagingCollectionView _cview;
 
@@ -21,7 +21,8 @@ namespace GridPagingExample
                     new { Animal = "Bear", Eats = "Oh my" },
                     new { Animal = "Wait", Eats = "Oh my isn't an animal" },
                     new { Animal = "Oh well", Eats = "Who is counting anyway" },
-                    new { Animal = "Need better content", Eats = "For posting on stackoverflow" }
+                    new { Animal = "Need better content", Eats = "For posting on stackoverflow" },
+                    new { Animal = "Turtle", Eats = "Pizza" }
                 },
                 2
             );
@@ -39,7 +40,7 @@ namespace GridPagingExample
         }
     }
 
-    public class PagingCollectionView : CollectionView
+    public sealed class PagingCollectionView : CollectionView
     {
         private readonly IList _innerList;
         private readonly int _itemsPerPage;
@@ -55,7 +56,34 @@ namespace GridPagingExample
 
         public override int Count
         {
-            get { return this._itemsPerPage; }
+            get 
+            {
+                // originally we were always returning the itemsPerPage as pointed out
+                // here: http://stackoverflow.com/questions/25300154/wpf-datagrid-pagination
+                // this is wrong on the last page
+                // of course, using Microsoft's implementation is recommended! this was
+                // meant to be an example on how to get started with paging data in WPF
+                // http://msdn.microsoft.com/en-us/library/system.windows.data.pagedcollectionview(v=vs.95).aspx
+                // credit to http://stackoverflow.com/users/1398211/novitchi-s for 
+                // pointing out the bug
+                if (this._currentPage < this.PageCount) // page 1..n-1
+                {
+                    return this._itemsPerPage;
+                }
+                else // page n
+                {
+                    var itemsLeft = this._innerList.Count % this._itemsPerPage;
+                    if (0 == itemsLeft)
+                    {
+                        return this._itemsPerPage; // exactly itemsPerPage left
+                    }
+                    else
+                    {
+                        // return the remaining items
+                        return itemsLeft;
+                    }
+                }
+            }
         }
 
         public int CurrentPage

@@ -1,3 +1,3 @@
 ﻿using System.Windows;
 
-namespace GridPagingExample { public partial class App : Application { } }
+namespace GridPagingExample { public sealed partial class App { } }
