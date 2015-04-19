@@ -1,0 +1,9 @@
+﻿<Window x:Class="VisifireDatabinding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:lview="clr-namespace:VisifireDatabinding.Views"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <lview:ExampleView/>
+    </Grid>
+</Window>

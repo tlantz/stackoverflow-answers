@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="VisifireDatabinding.Views.ExampleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vc="clr-namespace:Visifire.Charts;assembly=WPFVisifire.Charts">
+    <Grid>
+        <Grid.Resources>
+            <DataTemplate x:Key="MarkerChartTemplate">
+                <vc:Chart Height="200" Width="400">
+                    <vc:Chart.Series>
+                        <vc:DataSeries RenderAs="Line" DataSource="{Binding XAxisCollection}">
+                            <vc:DataSeries.DataMappings>
+                                <vc:DataMapping MemberName="YValue" Path="YValue"/>
+                            </vc:DataSeries.DataMappings>
+                        </vc:DataSeries>
+                        <vc:DataSeries RenderAs="Line" DataSource="{Binding YAxisCollection}">
+                            <vc:DataSeries.DataMappings>
+                                <vc:DataMapping MemberName="YValue" Path="YValue"/>
+                            </vc:DataSeries.DataMappings>
+                        </vc:DataSeries>
+                        <vc:DataSeries RenderAs="Line" DataSource="{Binding ZAxisCollection}">
+                            <vc:DataSeries.DataMappings>
+                                <vc:DataMapping MemberName="YValue" Path="YValue"/>
+                            </vc:DataSeries.DataMappings>
+                        </vc:DataSeries>
+                    </vc:Chart.Series>
+                </vc:Chart>
+            </DataTemplate>
+        </Grid.Resources>
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" 
+                      HorizontalAlignment="Stretch"
+                      VerticalScrollBarVisibility="Auto">
+            <ItemsControl VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                          ItemsSource="{Binding MarkerChartsCollections}"
+                          ItemTemplate="{StaticResource MarkerChartTemplate}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel HorizontalAlignment="Stretch" 
+                                    VerticalAlignment="Stretch"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
